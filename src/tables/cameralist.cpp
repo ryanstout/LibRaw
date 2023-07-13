@@ -710,6 +710,7 @@ static const char *static_camera_list[] = {
 	"Nikon Z 6 II",
 	"Nikon Z 7",
 	"Nikon Z 7 II",
+	"Nikon Z 8 (HE/HE* formats are not supported yet)",
 	"Nikon Z 9 (HE/HE* formats are not supported yet)",
 	"Nikon Z 50",
 	"Nikon Z fc",
