@@ -1008,6 +1008,8 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
       { 13389,-6049,-1441,-4544,12757,1969,229,498,7390 } },
     { LIBRAW_CAMERAMAKER_Nikon, "Z fc", 0, 0,
       { 11640,-4829,-1079,-5107,13006,2325,-972,1711,7380 } },
+    { LIBRAW_CAMERAMAKER_Nikon, "Z6_3", 0, 0,
+      { 13389,-6049,-1441,-4544,12757,1969,229,498,7390 } }, // TODO: Copied Z8 for now
 
     { LIBRAW_CAMERAMAKER_Olympus, "AIR A01", 0, 0xfe1,
       { 8992,-3093,-639,-2563,10721,2122,-437,1270,5473 } },
