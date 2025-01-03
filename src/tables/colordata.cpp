@@ -996,6 +996,8 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
 
     { LIBRAW_CAMERAMAKER_Nikon, "Z 50", 0, 0,
       { 11640,-4829,-1079,-5107,13006,2325,-972,1711,7380 } },
+    { LIBRAW_CAMERAMAKER_Nikon, "Z50_2", 0, 0,
+      { 11640,-4829,-1079,-5107,13006,2325,-972,1711,7380 } }, // Copied from Z50
     { LIBRAW_CAMERAMAKER_Nikon, "Z 5", 0, 0,
       { 8695,-2558,-648,-5015,12711,2575,-1279,2215,7514 } },
     { LIBRAW_CAMERAMAKER_Nikon, "Z 6", 0, 0,
@@ -1681,6 +1683,8 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
 
     { LIBRAW_CAMERAMAKER_Sony, "ILCE-1", 0, 0,
       { 8161, -2947, -739, -4811, 12668, 2389, -437, 1229, 6524}},
+    { LIBRAW_CAMERAMAKER_Sony, "ILCE-1M2", 0, 0,
+      { 8161, -2947, -739, -4811, 12668, 2389, -437, 1229, 6524}}, // Copied from ILCE-1
     { LIBRAW_CAMERAMAKER_Sony, "ILCE-7RM4", 0, 0, // same CMs: ILCE-7RM4, ILCE-7RM4A
       { 7662, -2686,-660,-5240, 12965,2530, -796, 1508, 6167 } },
     { LIBRAW_CAMERAMAKER_Sony, "ILCE-7RM3", 0, 0, // same CMs: ILCE-7RM3, ILCE-7RM3A
