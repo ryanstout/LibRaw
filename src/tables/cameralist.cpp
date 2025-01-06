@@ -1239,6 +1239,7 @@ static const char *static_camera_list[] = {
 	"Sony Xperia L",
 	"Sony Xperia 1 III",
 	"Sony ZV-1 (DCZV1/B)",
+	"Sony ZV-E1",
 	"Sony ZV-E10",
 	"STV680 VGA",
 	"PtGrey GRAS-50S5C",

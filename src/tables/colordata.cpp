@@ -1622,6 +1622,8 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
       { 8280,-2987,-703,-3531,11645,2133,-550,1542,5312 } },
     { LIBRAW_CAMERAMAKER_Sony, "ZV-E10", 0, 0,
       { 6355,-2067,-490,-3653,11542,2400,-406,1258,5506 } },
+    { LIBRAW_CAMERAMAKER_Sony, "ZV-E1", 0, 0,
+      { 6912,-2127,-469,-4470,12175,2587,-398,1478,6492 } },
 
     { LIBRAW_CAMERAMAKER_Sony, "DSC-RX100M7", -800, 0,
       {10315, -4390, -937, -4859, 12734, 2365, -734, 1537, 5997 } },
