@@ -2024,18 +2024,27 @@ void LibRaw::apply_tiff()
         load_flags = (((INT64(raw_width) * 3ULL / 2ULL) + 15ULL) / 16ULL) *
                      16ULL; // bytes per row
       }
-      else if ((!strncmp(model, "NIKON Z 9", 9) || !strncmp(model, "NIKON Z 8", 9) || !strncmp(model, "NIKON Z6_3", 10)) && tiff_ifd[raw].offset)
+      /* Z9/Z8/Z6 III/Z5 II (etc.): raw may be classic packed NEF or HE (JPEG-XS /
+       * IntoPIX). Probe payload start; mismatching loaders corrupt buffers. */
+      else if ((!strncmp(model, "NIKON Z 9", 9) || !strncmp(model, "NIKON Z 8", 9) ||
+                !strncmp(model, "NIKON Z6_3", 10) || !strcmp(model, "NIKON Z5_2") ||
+                !strcmp(model, "NIKON Z 5_2")) &&
+               tiff_ifd[raw].offset)
       {
-          INT64 pos = ftell(ifp);
-          unsigned char cmp[] = "CONTACT_INTOPIX"; // 15
-          unsigned char buf[16];
-          fseek(ifp, INT64(tiff_ifd[raw].offset) + 6LL, SEEK_SET);
-          fread(buf, 1, 16, ifp);
-          fseek(ifp, pos, SEEK_SET);
-          if(!memcmp(buf,cmp,15))
-            load_raw = &LibRaw::nikon_he_load_raw_placeholder;
-          else
-            load_raw = &LibRaw::nikon_load_raw;
+        INT64 pos = ftell(ifp);
+        unsigned char jxs[] = {0xff, 0x10, 0xff, 0x50}; /* JPEG-XS SOC+CAP (LibRaw upstream) */
+        unsigned char buf[16];
+        fseek(ifp, INT64(tiff_ifd[raw].offset), SEEK_SET);
+        fread(buf, 1, 4, ifp);
+        int he_jxs = !memcmp(buf, jxs, 4);
+        fseek(ifp, INT64(tiff_ifd[raw].offset) + 6LL, SEEK_SET);
+        fread(buf, 1, 16, ifp);
+        fseek(ifp, pos, SEEK_SET);
+        int he_intopix = !memcmp(buf, "CONTACT_INTOPIX", 15);
+        if (he_jxs || he_intopix)
+          load_raw = &LibRaw::nikon_he_load_raw_placeholder;
+        else
+          load_raw = &LibRaw::nikon_load_raw;
       }
       else
         load_raw = &LibRaw::nikon_load_raw;

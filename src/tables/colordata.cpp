@@ -1000,6 +1000,8 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
       { 11640,-4829,-1079,-5107,13006,2325,-972,1711,7380 } }, // Copied from Z50
     { LIBRAW_CAMERAMAKER_Nikon, "Z 5", 0, 0,
       { 8695,-2558,-648,-5015,12711,2575,-1279,2215,7514 } },
+    { LIBRAW_CAMERAMAKER_Nikon, "Z5_2", 0, 0, /* Z5 II; matrix from upstream LibRaw Z6_3 */
+      { 11206, -4286, -941, -4879, 12847, 2251, -745, 1654, 7374 } },
     { LIBRAW_CAMERAMAKER_Nikon, "Z 6", 0, 0,
       { 9943,-3269,-839,-5323,13269,2259,-1198,2083,7557 } },  // 'Z 6'(v.2), 'Z 6_2'
     { LIBRAW_CAMERAMAKER_Nikon, "Z 7", 0, 0,

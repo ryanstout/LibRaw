@@ -706,6 +706,7 @@ static const char *static_camera_list[] = {
 	"Nikon D7500",
 	"Nikon Df",
 	"Nikon Z 5",
+	"Nikon Z5_2",
 	"Nikon Z 6",
 	"Nikon Z 6 II",
 	"Nikon Z 6 III",
